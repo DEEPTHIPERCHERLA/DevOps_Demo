@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title><b><i>Registration Form</i></b></title>
+    <script>
+        function validateForm() {
+            var Name = document.forms["f1"]["name"].value;
+            var ed = document.forms["f1"]["email"].value;
+            var mn = document.forms["f1"]["mobileno"].value;
+            var event = document.forms["f1"]["event_name"].value; // Fix the name attribute reference
+            var no = document.forms["f1"]["number"].value;
+
+            if (Name == "") {
+                alert("Name must be filled");
+                return false;
+            } else if (ed == "") {
+                alert("Email must be filled");
+                return false;
+            } else if (mn == "") {
+                alert("Mobile no must be filled");
+                return false;
+            } else if (event == "") {
+                alert("Event name must be filled");
+                return false;
+            } else if (no == "") {
+                alert("Team size must be filled");
+                return false;
+            } else {
+                alert("Registration successful!!");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body bgcolor="cyan">
+    <center>
+        <font color="blue" size="4" face="arial"><b><i>Registration Form</i></b></font>
+    </center>
+    <br>
+    <form name="f1" align="center" onsubmit="return validateForm()">
+        Full Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="name" id="name" /><br> <!-- Added name attribute -->
+        Email Address &nbsp;&nbsp;&nbsp;
+        <input type="text" name="email" id="email" /><br> <!-- Added name attribute -->
+        Mobile No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="mobileno" id="mobileno" /><br> <!-- Added name attribute -->
+        Event Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="event_name" id="event_name" /><br> <!-- Added name attribute -->
+        Team Size &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" name="number" id="number" /><br><br><br> <!-- Added name attribute -->
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+    </form>
+</body>
+</html>
